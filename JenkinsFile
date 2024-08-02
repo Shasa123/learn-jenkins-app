@@ -21,11 +21,13 @@ pipeline {
             }
         }
         stage('Test') {
-            sh '''
-            echo "Testing the Laptop"
-            test -f build/index.html
-            npm test
-            '''
+            steps {
+                sh '''
+                echo "Testing the Laptop"
+                test -f build/index.html
+                npm test
+                '''
+            }
         }
     }
 }
